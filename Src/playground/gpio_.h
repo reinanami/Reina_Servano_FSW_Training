@@ -31,7 +31,8 @@ enum GPIO_OPEN_DRAIN {
 
     GPIO_DEFAULT_OPEN_DRAIN = GPIO_PUSH_PULL
 };
-typedef enum GPIO_OPEN_DRAIN GPIO_OPEN_DRAIN;
+
+typedef enum GPIO_OPEN_DRAIN GPIO_OPEN_DRAIN_MODE;
 
 // options for GPIO Speed
 enum GPIO_SPEED {
@@ -99,6 +100,6 @@ void _gpio_set(GPIO_TypeDef *port, int pin, GPIO_VALUE value);
  * @param speed GPIO_LOW_SPEED, GPIO_MED_SPEED, GPIO_HI_SPEED, GPIO_VERY_HI_SPEED
  * @param pull GPIO_NO_PULL, GPIO_PULL_UP, GPIO_PULL_DOWN
 */
-void _gpio_configureMode(GPIO_TypeDef *port, int pin, GPIO_MODE mode, GPIO_OPEN_DRAIN open_drain, GPIO_SPEED speed, GPIO_PULL pull);
+void _gpio_configureMode(GPIO_TypeDef *port, int pin, GPIO_MODE mode, GPIO_OPEN_DRAIN_MODE open_drain, GPIO_SPEED speed, GPIO_PULL pull);
 
 #endif // GPIO_TESTER_H

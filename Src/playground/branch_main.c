@@ -11,6 +11,24 @@ void branch_main() {
 	// infinite loop
 	while (1) {
 
+		// definitions
+		uint64_t time = 5000;
+		int pin = 1;
+
+		// set pin
+		_gpio_high(GPIOA, pin);
+
+		// delay
+		delay_ms(time);
+
+		// reset pin a
+		_gpio_high(GPIOA, pin);
+
+		// delay
+		delay_ms(time);
+
+		// hi
+
 	}
 
 	// NOTE

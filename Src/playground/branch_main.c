@@ -5,33 +5,58 @@
 #include <print_scan.h>
 
 void branch_main() {
-	// space for initializations
 
+	_gpio_configure_mode(GPIOE, 2, GPIO_MODE_OUTPUT, GPIO_PUSH_PULL, GPIO_MED_SPEED, GPIO_NO_PULL);
 
-	// infinite loop
-	while (1) {
+    while (1) {
+        //toggle logic but for gpio pin GPIOE-2  (Heartbeat LED)
 
-		// definitions
 		uint64_t time = 5000;
-		int pin = 1;
+		int pin = 2;
 
 		// set pin
-		_gpio_high(GPIOA, pin);
+		_gpio_high(GPIOE, pin);
 
 		// delay
 		delay_ms(time);
 
 		// reset pin a
-		_gpio_high(GPIOA, pin);
+		_gpio_high(GPIOE, pin);
 
 		// delay
 		delay_ms(time);
-
-		// hi
-
-	}
-
-	// NOTE
-	// Always keep the system in the infinite while loop. Never break out of it
-	// There is no place for the computer to go once you break out of this loop
+    }
 }
+
+// void branch_main() {
+// 	// space for initializations
+
+
+// 	// Blinky Code: Works!!!
+// 	while (1) {
+
+// 		// definitions
+// 		uint64_t time = 5000;
+// 		int pin = 1;
+
+// 		// set pin
+// 		_gpio_high(GPIOA, pin);
+
+// 		// delay
+// 		delay_ms(time);
+
+// 		// reset pin a
+// 		_gpio_high(GPIOA, pin);
+
+// 		// delay
+// 		delay_ms(time);
+
+// 		// hi
+
+// 	}
+
+// 	// NOTE
+// 	// Always keep the system in the infinite while loop. Never break out of it
+// 	// There is no place for the computer to go once you break out of this loop
+// }
+
